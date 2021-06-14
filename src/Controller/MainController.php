@@ -14,7 +14,7 @@ class MainController extends AbstractController
     public function index(): Response
     {
         return $this->json([
-        'questions' => 'test'
+        'questions' => ['question1,question2']
         ]);
     }
 }
