@@ -9,12 +9,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     /**
-     * @Route("/main", name="main")
+     * @Route("/question1", name="question1")
      */
     public function index(): Response
     {
         return $this->json([
-        'questions' => ['question1,question2']
+        'question' => 'What is the capital of Chile?',
+        'choices' => ['London, Santiago, Sucre, Quito'],
+        'answer' => 'Santiago'
+
         ]);
     }
 }
