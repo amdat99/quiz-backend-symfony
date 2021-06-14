@@ -13,12 +13,23 @@ class MainController extends AbstractController
      */
     public function question1(): Response
     {
-        return $this->json([
-        'question' => 'What is the capital of Chile?',
-        'choices' => ['London', 'Santiago', 'Sucre', 'Quito'],
-        'answer' => 'Santiago'
+       
 
-        ]);
+
+            $response = new Response();
+            
+            $response->setContent(json_encode([
+                'question' => 'What is the capital of Chile?',
+                'choices' => ['London', 'Santiago', 'Sucre', 'Quito'],
+                'answer' => 'Santiago'
+            ]));
+    
+            $response->headers->set('Content-Type', 'application/json');
+           
+            return $response;
+        
+
+      
     }
 
         /**
