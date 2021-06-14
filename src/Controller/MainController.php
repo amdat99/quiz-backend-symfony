@@ -14,8 +14,6 @@ class MainController extends AbstractController
     public function question1(): Response
     {
        
-
-
             $response = new Response();
             
             $response->setContent(json_encode([
@@ -28,10 +26,7 @@ class MainController extends AbstractController
             $response->headers->set('Access-Control-Allow-Origin', '*');
            
             return $response;
-        
-
-      
-    }
+        }
 
         /**
      * @Route("/question2", name="question2")
@@ -59,12 +54,16 @@ class MainController extends AbstractController
      */
     public function question3(): Response
     {
-        return $this->json([
+        $response = new Response();
+        $response->setContent(json_encode([
         'question' => 'Which planet is the hottest?',
         'choices' => ['Earth' ,'Mercury','Saturn', 'Venus'],
         'answer' => 'Venus'
-
-        ]);
+        ]));
+        $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set('Access-Control-Allow-Origin', '*');
+       
+        return $response;
     }
 
            /**
@@ -72,12 +71,17 @@ class MainController extends AbstractController
      */
     public function question4(): Response
     {
-        return $this->json([
+        $response = new Response();
+        $response->setContent(json_encode([
         'question' => 'Which country gifted the Statue of Liberty to the U.S.?',
         'choices' => ['France' ,'Spain','China', 'Canada'],
         'answer' => 'France'
+         ]));
 
-        ]);
+         $response->headers->set('Content-Type', 'application/json');
+         $response->headers->set('Access-Control-Allow-Origin', '*');
+        
+         return $response;
     }
 
            /**
@@ -85,11 +89,15 @@ class MainController extends AbstractController
      */
     public function question5(): Response
     {
-        return $this->json([
+        $response = new Response();
+        $response->setContent(json_encode([
         'question' => 'Which country consumes the most chocolate',
         'choices' => ['Germany' ,'Switzerland','USA', 'Scotland'],
         'answer' => 'Switzerland'
-
-        ]);
+        ]));
+        $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set('Access-Control-Allow-Origin', '*');
+       
+        return $response;
     }
 }
