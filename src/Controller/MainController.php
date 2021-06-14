@@ -38,12 +38,20 @@ class MainController extends AbstractController
      */
     public function question2(): Response
     {
-        return $this->json([
+
+        $response = new Response();
+        $response->setContent(json_encode([
         'question' => 'Who was the head of state in Japan during the second world war?',
         'choices' => ['Emperor Naruhito' ,'Emperor Hirohito','Yamagata Aritomo', 'Boris Johnson'],
         'answer' => 'Emperor Hirohito'
 
-        ]);
+        ]));
+
+          
+        $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set('Access-Control-Allow-Origin', '*');
+       
+        return $response;
     }
 
            /**
